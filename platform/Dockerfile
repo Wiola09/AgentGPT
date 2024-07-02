@@ -30,13 +30,12 @@ RUN apt-get purge -y \
 # Copying actual application
 COPY . /app/src/
 RUN poetry install --only main
-RUN pip install langchain
 
 CMD ["/usr/local/bin/python", "-m", "reworkd_platform"]
 
 FROM prod as dev
 
 RUN poetry install
-RUN pip install langchain
-RUN pip install --upgrade langchain
+
+
 
