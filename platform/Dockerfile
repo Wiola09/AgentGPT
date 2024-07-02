@@ -38,3 +38,5 @@ FROM prod as dev
 
 RUN poetry install
 RUN pip install langchain
+RUN pip install --upgrade langchain
+
